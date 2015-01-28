@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
 		
 		viewPager.setAdapter(new PageAdapter(views));
 		viewPager.setCurrentItem(0);
-		viewPager.setOnPageChangeListener(new ViewPageListener(viewPager,bmpW,offset,imageView));
+		viewPager.setOnPageChangeListener(new ViewPageListener(bmpW,offset,imageView));
 	}
 	
 	private void InitImageView(){
@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
 		
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
 		int screenW = dm.widthPixels ;
-		
+		//<--offset--><--bmpw--><--offset-->|<--offset--><--bmpw--><--offset-->|<--offset--><--bmpw--><--offset-->
 		offset = (screenW/titles.length-bmpW)/2 ;
 		Matrix matrix = new Matrix() ;
 		matrix.postTranslate(offset, 0) ;
